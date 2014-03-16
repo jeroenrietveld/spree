@@ -9,6 +9,8 @@ gem 'sqlite3'
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
 
+gem 'font-awesome-sass'
+
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 
@@ -29,10 +31,18 @@ gem 'jbuilder', '~> 1.2'
 
 gem 'spree', github: 'spree/spree', branch: '2-1-stable'
 gem 'spree_auth_devise', github: 'spree/spree_auth_devise', branch: '2-1-stable'
+gem 'spree_reviews', github: 'spree/spree_reviews', branch: '2-1-stable'
+
+gem 'haml'
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :assets do
+  gem 'therubyracer', :platforms => :ruby
+  gem 'compass-rails'
 end
 
 # Use ActiveModel has_secure_password

@@ -10,3 +10,11 @@
 //= require store/spree_frontend
 
 //= require_tree .
+$(document).ready(function(){
+  $(".cart").click(function(e) {
+    e.preventDefault();
+
+    $("#cart").slideToggle();
+  });
+});
+//= require jquery.rating

@@ -1,0 +1,43 @@
+%header#header
+  %div#logo
+    = link_to 'LOGO', spree.root_path, class: "logo"
+    %ul.menu
+      %li
+        = link_to 'Menu', spree.root_path
+      %li
+        = link_to 'Menu', spree.root_path
+      %li
+        = link_to 'Menu', spree.root_path
+      %li
+        = link_to 'Menu', spree.root_path
+    %div.customer
+      %div.profile Profile
+      = link_to "Cart (#{@current_order.products.count unless !@current_order})", '#', { class: 'cart' }
+  %div#cart
+    %div#products
+      - if !@current_order || @current_order.products.empty?
+        Geen producten in het winkelmandje
+      - else
+        - @current_order.products.each do |p|
+          %div.product
+            = link_to small_image(p, :itemprop => "image")
+            = p.name
+    %div#checkout
+      %div.total= @current_order.display_total unless !@current_order
+      %div.checkout Checkout
+    %div.clear
+  %div#menu
+    %ul.categories
+      %li
+        = link_to 'Category', spree.root_path
+      %li
+        = link_to 'Category', spree.root_path
+      %li
+        = link_to 'Category', spree.root_path
+      %li
+        = link_to 'Category', spree.root_path
+  %div#search
+    %div.search
+      %span.loop
+        = icon('flag')
+      %input{ :type => "text" , :placeholder => "Search by x or y"}

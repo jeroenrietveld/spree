@@ -1,0 +1,163 @@
+$green: #27ae60;
+$emerald: #2ecc71;
+$white: #E7ECEE;
+
+@import "font-awesome";
+
+body, html {
+  height: 100%;
+  background: $white;
+}
+
+.container {
+  background: #FFF;
+  min-height: 100%;
+  height: auto;
+}
+
+.clear {
+  clear: both;
+}
+
+#header {
+  width: 100%;
+
+  #logo {
+    text-align: center;
+    padding: 20px 0;
+    position: relative;
+
+    .menu {
+      position: absolute;
+      top: 0px;
+      right: 0px;
+      list-style-type: none;
+      
+      li {
+        display: inline;
+      }
+    }
+    .customer {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+
+      .profile {
+        float: right;
+        padding: 0 5px;
+      }
+      .cart {
+        float: right;
+        padding: 0 5px;
+      }
+    }
+  }
+  #cart {
+    height: 150px;
+    background: darken($white, 5%);
+    //display: none;
+    #products {
+      padding: 5px;
+      float: left;
+      width: 75%;
+      .product {
+        text-align: center;
+        width: 120px;
+        margin: 0 10px;
+        a {
+          display: block;
+        }
+        img {
+          background: #FFF;
+          padding: 5px;
+        }
+      }
+    }
+    #checkout {
+      position: relative;
+      cursor: pointer;
+      float: right;
+      width: 20%;
+      height: 100%;
+      background: lighten($green, 20%);
+      text-align: center;
+      .total {
+        position: relative;
+        z-index: 2;
+        padding: 35px 0;
+        font-size: 35px;
+        font-weight: bold;
+        color: #00ADEE;
+      }
+      .checkout {
+        position: relative;
+        z-index: 2;
+        font-size: 35px;
+        font-weight: bold;
+        color: #FFF;
+      }
+    }
+    #checkout:hover {
+      background: lighten($green, 10%);
+    }
+    #checkout:after {
+      content: "\f07a";
+      font-family: FontAwesome;
+      font-style: normal;
+      font-weight: normal;
+      text-decoration: inherit;
+      position: absolute;
+      font-size: 100px;
+      //color: #DDD;
+      color: lighten($green, 30%);
+      top: 50%;
+      left: 50%;
+      margin: -10px 0 0 -50px;
+      z-index: 1;
+    }
+  }
+  #menu {
+    height: 55px;
+    background: $green;
+    border-bottom: 1px solid darken($green, 10%);
+
+    .categories {
+      list-style-type: none;
+      text-align: center;
+      padding-top: 20px;
+
+      li {
+        padding: 0 35px;
+        display: inline;
+        font-size: 25px;
+        font-weight: bold;
+
+        a {
+          text-decoration: none;
+          color: #FFF;
+        }
+        a:hover {
+          color: #AAA;
+        }
+      }
+    }
+  }
+  #search {
+    height: 45px;
+    background: $green; 
+
+    input {
+      width: 80%;
+      margin: 0 auto; 
+      display: block;
+      color: lighten($emerald, 10%);
+      font-size: 25px;
+      font-weight: bold;
+      text-align: center;
+      background: $green;
+      height: 40px;
+      border: none;
+      padding-top: 10px;
+    }
+  }
+}
