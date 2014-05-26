@@ -1,6 +1,15 @@
 %header#header
-  %div#logo
+  .top-bar
+    .phone
+      %i.fa.fa-phone
+      %span= link_to '078-1234567', 'tel:+31781234567', :class => 'phone-number'
+    .email
+      %i.fa.fa-envelope
+      %span= link_to 'info@example.com', 'mailto:info@example.com', :class => 'email-address'
+
+  %h1#logo
     = link_to 'LOGO', spree.root_path, class: "logo"
+  %nav#primary-navigation  
     %ul.menu
       %li
         = link_to 'Menu', spree.root_path
